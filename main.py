@@ -25,7 +25,7 @@ def prompt_float(msg: str) -> float | None:
         return None
 
 def menu() -> None:
-    repo = CarRepository() # pyright: ignore[reportCallIssue]
+    repo = CarRepository.CarRepository()
 
     while True:
         print('\n-------MENU--------\n')
@@ -44,7 +44,7 @@ def menu() -> None:
             for car in cars:
                 print(car)
 
-        elif choice == 2:
+        elif choice == "2":
             brand = prompt("Mark: ")
             model = prompt("Model: ")
             year = prompt_int("Year: ")
@@ -64,7 +64,7 @@ def menu() -> None:
                 continue
             brand = prompt('New mark (Enter - skip): ') or None
             model = prompt('New model (Enter - skip): ') or None
-            year = prompt('New year (Enter - skip): ')
+            year = prompt_int('New year (Enter - skip): ')
             price = prompt_float("New price (Enter - skip): ")
             if repo.update(car_id, brand, model, year, price):
                 print("updated")

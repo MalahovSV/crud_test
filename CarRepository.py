@@ -17,7 +17,7 @@ class CarRepository:
                 return car
         return None
 
-    def create (self, brand: str, model: str, year: int, price: float) -> Car:
+    def create (self, brand: str, model: str, year: int, price: float) -> Car | None:
         car = Car(self._next_id(), brand, model, year, price)
         if car in self.cars:
             raise ValueError("[ERROR]: такой же объект")

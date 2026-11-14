@@ -14,11 +14,11 @@ class Car:
     @staticmethod
     def from_dict(data: dict) -> "Car":
         return Car(
-            id = data["id"]
-            brand = data["brand"]
-            model = data["model"]
-            year = data["year"]
-            price = data["price"]
+            id=data["id"],
+            brand=data["brand"],
+            model=data["model"],
+            year=data["year"],
+            price=data["price"]
         )
     def __eq__ (self, other: object) -> bool:
         if self is other:
